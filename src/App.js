@@ -36,7 +36,28 @@ class App extends Component {
           <Route
             path="/"
             exact
-            component={routerProps => <div>This is the home page!</div>}
+            render={routerProps => <HomePage {...routerProps} />}
+          />
+          <Route
+            path="/dogs"
+            exact
+            component={routerProps => (
+              <div>This is the page about dog breeds!</div>
+            )}
+          />
+          <Route
+            path="/cats"
+            exact
+            component={routerProps => (
+              <div>This is the page about cat breeds!</div>
+            )}
+          />
+          <Route
+            path="/newpet"
+            exact
+            component={routerProps => (
+              <div>This is the page lets you add a pet!</div>
+            )}
           />
         </main>
       </div>
