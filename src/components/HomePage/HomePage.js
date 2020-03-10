@@ -11,6 +11,8 @@ class HomePage extends Component {
       pets: null
     };
   }
+
+  //method to populate cards
   populateCards = () => {
     return this.state.pets.map(petObject => (
       <Card {...petObject} key={petObject._id} />
@@ -18,10 +20,15 @@ class HomePage extends Component {
   };
   componentDidMount() {
     if (!this.state.pets) {
-      let url = "http://localhost:8080/pets";
+      let url = "";
+      if (process.env.NODE_ENV === "development") {
+        url = "http://localhost:8080/pets";
+      } else {
+        url = "https://boiling-everglades-85077.herokuapp.com/pets";
+      }
+
       axios.get(url).then(res => {
         this.setState({ pets: res.data });
-        console.log(res.data);
       });
     }
   }
@@ -29,7 +36,9 @@ class HomePage extends Component {
     if (this.state.pets) {
       return <div>{this.populateCards()}</div>;
     } else {
-      return <div>This is our home page :)</div>;
+      return (
+        <div>This is our home page :) please wait while our pets load</div>
+      );
     }
   }
 }
