@@ -7,6 +7,12 @@ function App() {
     <div className="App">
       <header className="App-header">hello world!</header>
       <div>Zack Friendly</div>
+<<<<<<< HEAD
+=======
+
+      <h1>Sarah</h1>
+
+>>>>>>> 8c19fabcc62d0b31678078995b5861aace3404ac
       <p>Norman</p>
       <div>Sara</div>
     </div>
