@@ -23,7 +23,7 @@ class CatBreeds extends Component {
       if (process.env.NODE_ENV === "development") {
         url = "http://localhost:8080/cats";
       } else {
-        url = "https://boiling-everglades-85077.herokuapp.com/pets";
+        url = "https://boiling-everglades-85077.herokuapp.com/cats";
       }
       axios.get(url).then(res => {
         this.setState({ breeds: res.data });
