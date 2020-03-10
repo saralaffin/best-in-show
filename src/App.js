@@ -7,26 +7,6 @@ import CatBreeds from "./components/CatBreeds/CatBreeds";
 import AddPet from "./components/AddPet/AddPet";
 
 class App extends Component {
-  //code below copied from national parks lab
-  // constructor() {
-  //   super();
-
-  //   this.state = {
-  //     parks: null
-  //   };
-  // }
-  // componentDidMount() {
-  // if (!this.state.parks) {
-  //   let url =
-  //     "https://developer.nps.gov/api/v1/parks?limit=50&fields=images,addresses&api_key=KDAvx939Yj9FsDsKrBSHeZi7BMzZHUqpQdLU5tfV";
-
-  //   fetch(url)
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       this.setState({ parks: res.data });
-  //     });
-  // }
-  // }
   render() {
     return (
       <div>
