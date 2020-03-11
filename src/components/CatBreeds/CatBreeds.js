@@ -10,18 +10,31 @@ class CatBreeds extends Component {
     super();
 
     this.state = {
-      breeds: null
+      breeds: null,
+      selectedBreed: null
     };
   }
+  clickHandle = e => {
+    console.log(this.state.breeds);
+    let catObject = this.state.breeds.filter(el => {
+      if (el.breedName === e.target.innerText) {
+        return <div className="test">HELLO</div>;
+      }
+    });
+    this.setState({ selectedBreed: catObject.breedName });
+    console.log(catObject);
+  };
 
   //method to populate cards
   populateBreeds = () => {
     return this.state.breeds.map(breedObject => (
-      <Link to="/">
-        <div className="CatBreeds__breed" key={breedObject._id}>
-          {breedObject.breedName}
-        </div>
-      </Link>
+      <div
+        className="CatBreeds__breed"
+        key={breedObject._id}
+        onClick={this.clickHandle}
+      >
+        {breedObject.breedName}
+      </div>
     ));
   };
   componentDidMount() {
@@ -41,12 +54,13 @@ class CatBreeds extends Component {
   render() {
     if (this.state.breeds) {
       return (
-        <div className="CatBreeds___container">{this.populateBreeds()}</div>
+        <div>
+          <div className="CatBreeds___container">{this.populateBreeds()}</div>
+          <div className="hello">{this.state.selectedBreed}</div>
+        </div>
       );
     } else {
-      return (
-        <div>This is about cat breeds c: please wait while our cats load</div>
-      );
+      return <div>Loading!</div>;
     }
   }
 }
