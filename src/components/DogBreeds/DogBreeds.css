@@ -1,7 +1,6 @@
 .DogBreeds___container {
   height: 80vh;
   width: 15%;
-  background-color: black;
   overflow-y: scroll;
   color: white;
   float: right;
@@ -11,5 +10,36 @@
 .DogBreeds__breed {
   line-height: 2;
   border-bottom: 1px solid white;
+  background-color: black;
   padding-left: 10px;
+}
+
+.DogBreeds__breed:hover {
+  background-color: rgba(0, 0, 0, 0.769);
+  font-size: 2vh;
+}
+
+.DogBreeds___container a {
+  text-decoration: none;
+  color: white;
+}
+
+.DogBreeds__info-container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.DogBreeds__info-title {
+  padding-top: 20%;
+  font-size: 4vh;
+}
+
+.DogBreeds__info-key {
+  padding-right: 20px;
+}
+
+.DogBreeds__info-property {
+  line-height: 3em;
+  border-bottom: 1px dotted #a80000;
 }
