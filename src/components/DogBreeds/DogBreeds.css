@@ -1,0 +1,15 @@
+.DogBreeds___container {
+  height: 80vh;
+  width: 15%;
+  background-color: black;
+  overflow-y: scroll;
+  color: white;
+  float: right;
+  box-shadow: -5px 5px #a80000;
+}
+
+.DogBreeds__breed {
+  line-height: 2;
+  border-bottom: 1px solid white;
+  padding-left: 10px;
+}
