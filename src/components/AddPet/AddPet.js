@@ -22,35 +22,99 @@ class AddPet extends Component {
       numberOfLikes: 0
     };
   }
+  // define call back function to capture input
+  getInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
   inputComponenets = [
-    <Input label="Name" type="small" placeholder="Name" />,
     <Input
+      key="Name"
+      label="Name"
+      name="petName"
+      type="small"
+      placeholder="Name"
+      onChange={this.getInput}
+    />,
+    <Input
+      key="Caption"
       label="Caption"
       type="small"
       placeholder="Be creative! And pawsitive!"
+      onChange={this.getInput}
+      name="caption"
     />,
     <Input
-      label="Image URLCats"
+      key="Image"
+      label="Image URL"
       type="small"
       placeholder="Checkout imgur.com for hosting image files"
+      onChange={this.getInput}
+      name="image"
     />
   ];
   dropdownComponents = () => {
     return [
-      <Dropdown label="Type" options={["cat", "dog"]} type="gray" />,
       <Dropdown
+        key="Type"
+        label="Type"
+        options={["cat", "dog"]}
+        type="gray"
+        onChange={this.getInput}
+        name="type"
+      />,
+      <Dropdown
+        key="Breed"
         label="Breed"
         options={[...this.state.catBreeds, ...this.state.dogBreeds]}
         type="gray"
+        onChange={this.getInput}
+        name="breed"
       />,
       <Dropdown
+        key="Age"
         label="Age"
-        options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, "15+"]}
+        options={[
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]}
         type="gray"
+        onChange={this.getInput}
+        name="age"
       />
     ];
   };
   buttonComponent = (<Button label="Submit" type="default" />);
+  onSubmit = e => {
+    e.preventDefault();
+    axios.post(`${getAPI()}pets`, {
+      type: this.state.type,
+      petName: this.state.petName,
+      age: parseInt(this.state.age),
+      breed: this.state.breed,
+      image: this.state.image,
+      caption: this.state.caption
+    });
+  };
   componentDidMount() {
     if (!this.state.breeds) {
       let urlCats = `${getAPI()}cats/`;
@@ -70,6 +134,7 @@ class AddPet extends Component {
       <div>
         This page lets you add pets!
         <Form
+          onSubmit={this.onSubmit}
           inputComponenets={this.inputComponenets}
           dropdownComponents={this.dropdownComponents()}
           buttonComponent={this.buttonComponent}

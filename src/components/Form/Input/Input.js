@@ -6,11 +6,7 @@ const Input = props => {
   if (types.includes(props.type)) {
     classList += ` input__${props.type}`;
   }
-  // define call back function to capture email address
-  let getInput = e => {
-    let inputValue = e.target.value;
-    console.log(inputValue);
-  };
+
   return (
     <p>
       <label>{props.label}</label>
@@ -18,8 +14,9 @@ const Input = props => {
       <input
         type="text"
         placeholder={props.placeholder}
-        onChange={getInput}
+        onChange={props.onChange}
         className={classList}
+        name={props.name}
       ></input>
     </p>
   );

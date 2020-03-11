@@ -21,7 +21,16 @@ const Dropdown = props => {
     <p>
       <label>{props.label}</label>
       <br></br>
-      <select className={classList} id="dropdown">
+      <select
+        className={classList}
+        id="dropdown"
+        onChange={props.onChange}
+        name={props.name}
+        defaultValue={"DEFAULT"}
+      >
+        <option value="DEFAULT" disabled>
+          Select...
+        </option>
         {optionsFill()}
       </select>
     </p>
