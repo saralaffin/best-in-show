@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import axios from "axios";
+import getAPI from "../../util/util";
 
 class DogBreeds extends Component {
   constructor() {
@@ -19,12 +20,7 @@ class DogBreeds extends Component {
   };
   componentDidMount() {
     if (!this.state.breeds) {
-      let url = "";
-      if (process.env.NODE_ENV === "development") {
-        url = "http://localhost:8080/dogs";
-      } else {
-        url = "https://boiling-everglades-85077.herokuapp.com/dogs";
-      }
+      let url = `${getAPI()}dogs/`;
       axios.get(url).then(res => {
         this.setState({ breeds: res.data });
         console.log(res.data);
