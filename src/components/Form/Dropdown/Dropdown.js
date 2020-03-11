@@ -19,7 +19,8 @@ const Dropdown = props => {
 
   return (
     <p>
-      <label>{props.label}: </label>
+      <label>{props.label}</label>
+      <br></br>
       <select className={classList} id="dropdown">
         {optionsFill()}
       </select>

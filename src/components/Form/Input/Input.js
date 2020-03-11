@@ -17,7 +17,7 @@ const Input = props => {
       <br></br>
       <input
         type="text"
-        placeholder="Input"
+        placeholder={props.placeholder}
         onChange={getInput}
         className={classList}
       ></input>
