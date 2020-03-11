@@ -35,7 +35,7 @@ class App extends Component {
             render={routerProps => <AddPet {...routerProps} />}
           />
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
