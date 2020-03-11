@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-
+import "../../App.css";
+import "./CatBreeds.css";
 import axios from "axios";
+
+import { Drawer } from "@material-ui/core";
 
 class CatBreeds extends Component {
   constructor() {
@@ -14,7 +17,9 @@ class CatBreeds extends Component {
   //method to populate cards
   populateBreeds = () => {
     return this.state.breeds.map(breedObject => (
-      <div key={breedObject._id}>Here is the {breedObject.breedName} breed</div>
+      <div className="CatBreeds__breed" key={breedObject._id}>
+        {breedObject.breedName}
+      </div>
     ));
   };
   componentDidMount() {
@@ -33,7 +38,9 @@ class CatBreeds extends Component {
   }
   render() {
     if (this.state.breeds) {
-      return <div>{this.populateBreeds()}</div>;
+      return (
+        <div className="CatBreeds___container">{this.populateBreeds()}</div>
+      );
     } else {
       return (
         <div>This is about cat breeds c: please wait while our cats load</div>

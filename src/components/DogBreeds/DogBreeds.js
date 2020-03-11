@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import "../../App.css";
+import "./DogBreeds.css";
 import axios from "axios";
 
 class DogBreeds extends Component {
@@ -14,7 +15,9 @@ class DogBreeds extends Component {
   //method to populate cards
   populateBreeds = () => {
     return this.state.breeds.map(breedObject => (
-      <div key={breedObject._id}>Here is the {breedObject.breedName} breed</div>
+      <div className="DogBreeds__breed" key={breedObject._id}>
+        {breedObject.breedName}
+      </div>
     ));
   };
   componentDidMount() {
@@ -33,7 +36,9 @@ class DogBreeds extends Component {
   }
   render() {
     if (this.state.breeds) {
-      return <div>{this.populateBreeds()}</div>;
+      return (
+        <div className="DogBreeds___container">{this.populateBreeds()}</div>
+      );
     } else {
       return (
         <div>This is about dog breeds c: please wait while our dogs load</div>
