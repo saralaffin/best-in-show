@@ -5,6 +5,7 @@
   overflow-y: scroll;
   color: white;
   float: right;
+  box-shadow: -5px 5px #a80000;
 }
 
 .DogBreeds__breed {

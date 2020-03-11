@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../../App.css";
 import "./CatBreeds.css";
 import axios from "axios";
-
+import { Route, Link } from "react-router-dom";
 import { Drawer } from "@material-ui/core";
 
 class CatBreeds extends Component {
@@ -17,9 +17,11 @@ class CatBreeds extends Component {
   //method to populate cards
   populateBreeds = () => {
     return this.state.breeds.map(breedObject => (
-      <div className="CatBreeds__breed" key={breedObject._id}>
-        {breedObject.breedName}
-      </div>
+      <Link to="/">
+        <div className="CatBreeds__breed" key={breedObject._id}>
+          {breedObject.breedName}
+        </div>
+      </Link>
     ));
   };
   componentDidMount() {

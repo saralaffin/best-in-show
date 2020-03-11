@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
+import HomeIcon from "@material-ui/icons/Home";
+
 import "../../App.css";
 import "./Header.css";
 
@@ -10,8 +12,8 @@ function Header(props) {
         <img src="https://i.imgur.com/15AizW0.png"></img>
       </div>
       <div className="header__links-container">
-        <Link to="/" className="header__links">
-          Posts
+        <Link to="/addPet" className="header__links">
+          + Post
         </Link>
         <Link to="/dogs" className="header__links">
           Dog Breeds
@@ -19,8 +21,8 @@ function Header(props) {
         <Link to="/cats" className="header__links">
           Cat Breeds
         </Link>
-        <Link to="/addPet" className="header__links">
-          Add a Pet
+        <Link to="/" className="header__links">
+          <HomeIcon fontSize="large" color="white" />
         </Link>
       </div>
     </div>
