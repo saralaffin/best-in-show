@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import "../../App.css";
+import "./HomePage.css";
 import axios from "axios";
 import Card from "../Card/Card";
 
@@ -34,7 +35,7 @@ class HomePage extends Component {
   }
   render() {
     if (this.state.pets) {
-      return <div>{this.populateCards()}</div>;
+      return <div className="homepage__container">{this.populateCards()}</div>;
     } else {
       return (
         <div>This is our home page :) please wait while our pets load</div>

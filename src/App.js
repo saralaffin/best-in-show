@@ -5,18 +5,15 @@ import HomePage from "./components/HomePage/HomePage";
 import DogBreeds from "./components/DogBreeds/DogBreeds";
 import CatBreeds from "./components/CatBreeds/CatBreeds";
 import AddPet from "./components/AddPet/AddPet";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <header>
-          <Link to="/">Posts</Link>
-          <Link to="/dogs">Dog Breeds</Link>
-          <Link to="/cats">Cat Breeds</Link>
-          <Link to="/addPet">Add a Pet</Link>
-        </header>
-        <main>
+        <Header />
+        <main className="main__container">
           <Route
             path="/"
             exact
@@ -38,6 +35,7 @@ class App extends Component {
             render={routerProps => <AddPet {...routerProps} />}
           />
         </main>
+        <Footer />
       </div>
     );
   }
