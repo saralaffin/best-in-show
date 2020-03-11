@@ -106,6 +106,7 @@ class AddPet extends Component {
   };
   buttonComponent = (<Button label="Submit" type="default" />);
   onSubmit = e => {
+    e.preventDefault();
     axios.post(`${getAPI()}pets`, {
       type: this.state.type,
       petName: this.state.petName,
