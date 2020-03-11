@@ -1,0 +1,53 @@
+.card__feed {
+  max-height: 600px;
+  width: 420px;
+  overflow-y: scroll;
+  display: grid;
+  margin: 0 auto;
+}
+
+.card__container-image {
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+}
+
+.card__container {
+  width: 400px;
+  height: 560px;
+  border: 2px solid black;
+  overflow-y: scroll;
+}
+
+.card__container-username {
+  font-weight: 900;
+}
+
+.card__container-caption {
+  padding: 15px 10px;
+  font-size: 2.5vh;
+}
+
+.card__container-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 5%;
+  align-items: center;
+}
+
+.card__container-like {
+  height: 60px;
+  width: 60px;
+}
+
+.card__container-more {
+  background-color: black;
+  color: white;
+  font-size: 2vh;
+  padding: 5px;
+  width: 40%;
+  border-radius: 5px;
+  text-align: center;
+}
