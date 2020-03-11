@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../App.css";
 import "./HomePage.css";
 import axios from "axios";
+import getAPI from "../../util/util";
 import Card from "../Card/Card";
 
 class HomePage extends Component {
@@ -21,12 +22,7 @@ class HomePage extends Component {
   };
   componentDidMount() {
     if (!this.state.pets) {
-      let url = "";
-      if (process.env.NODE_ENV === "development") {
-        url = "http://localhost:8080/pets";
-      } else {
-        url = "https://boiling-everglades-85077.herokuapp.com/pets";
-      }
+      let url = `${getAPI()}pets/`;
 
       axios.get(url).then(res => {
         this.setState({ pets: res.data });
