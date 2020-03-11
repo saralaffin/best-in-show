@@ -24,8 +24,22 @@
   color: white;
 }
 
-.test {
-  height: 500px;
-  width: 500px;
-  background-color: green;
+.CatBreeds__info-container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.CatBreeds__info-title {
+  padding-top: 20%;
+  font-size: 4vh;
+}
+
+.CatBreeds__info-key {
+  padding-right: 20px;
+}
+
+.CatBreeds__info-property {
+  line-height: 3em;
+  border-bottom: 1px dotted #a80000;
 }
