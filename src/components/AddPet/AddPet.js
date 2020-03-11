@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
 import Form from "../Form/Form";
 import Input from "../Form/Input/Input";
 import Dropdown from "../Form/Dropdown/Dropdown";
@@ -105,7 +106,6 @@ class AddPet extends Component {
   };
   buttonComponent = (<Button label="Submit" type="default" />);
   onSubmit = e => {
-    e.preventDefault();
     axios.post(`${getAPI()}pets`, {
       type: this.state.type,
       petName: this.state.petName,
