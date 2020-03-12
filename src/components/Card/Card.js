@@ -1,8 +1,30 @@
 import React, { Component } from "react";
 import "../../App.css";
 import "./Card.css";
+import Like from "../Like/Like";
+import Axios from "axios";
+import getAPI from "../../util/util";
 
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      numberOfLikes: this.props.numberOfLikes || 0,
+      liked: false
+    };
+  }
+  clickHandle = () => {
+    if (!this.state.liked) {
+      const currentLikes = this.state.numberOfLikes + 1;
+      this.setState({
+        liked: true,
+        numberOfLikes: currentLikes
+      });
+      Axios.put(`${getAPI()}pet/${this.props._id}`, {
+        numberOfLikes: currentLikes
+      });
+    }
+  };
   render() {
     return (
       <div>
@@ -20,11 +42,10 @@ class Card extends Component {
             </div>
             <div className="card__container-links">
               <div>
-                <img
-                  className="card__container-like"
-                  src="https://i.imgur.com/I3Ef8to.png"
-                ></img>
-                <span>{this.props.numberOfLikes} Likes</span>
+                <div className="card__container-like">
+                  <Like active={this.state.liked} onClick={this.clickHandle} />
+                </div>
+                <span>{this.state.numberOfLikes} Likes</span>
               </div>
               <div className="card__container-more">See More Info</div>
             </div>
