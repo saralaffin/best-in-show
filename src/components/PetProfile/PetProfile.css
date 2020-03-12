@@ -1,0 +1,75 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.pet__background {
+  background-color: #fafafa;
+}
+
+.pet__container-image {
+  border-radius: 5px 5px 0 0;
+  width: 600px;
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+}
+
+.pet__container {
+  max-width: 600px;
+  max-height: 800px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.pet__container-username {
+  font-weight: 900;
+}
+
+.pet__container-caption {
+  padding: 15px 10px;
+  font-size: 1.8vh;
+}
+
+.pet__container-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2%;
+  align-items: center;
+}
+
+.pet__container-like {
+  height: 60px;
+  width: 60px;
+  align-items: center;
+}
+
+.pet-likes {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.pet__container-more {
+  background-color: black;
+  color: white;
+  font-size: 2vh;
+  padding: 5px;
+  width: 40%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.pet__container-more-stats {
+  padding-left: 10px;
+}
+.pet__container-more-stats span {
+  font-weight: 900;
+}
+.pet__container-breed {
+}
+.pet__container-age {
+}
