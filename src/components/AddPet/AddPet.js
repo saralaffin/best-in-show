@@ -106,7 +106,7 @@ class AddPet extends Component {
       />
     ];
   };
-  buttonComponent = (<Button label="Submit" type="default" />);
+  buttonComponent = (<Button label="Submit" type="lprimshad" />);
   onSubmit = e => {
     axios.post(`${getAPI()}pets`, {
       type: this.state.type,
@@ -133,7 +133,7 @@ class AddPet extends Component {
   }
   render() {
     return (
-      <div className="Form__container" type="lprimshad">
+      <div className="Form__container">
         <Form
           onSubmit={this.onSubmit}
           inputComponenets={this.inputComponenets}
