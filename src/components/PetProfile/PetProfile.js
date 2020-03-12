@@ -5,6 +5,7 @@ import getAPI from "../../util/util";
 import axios from "axios";
 import Card from "../Card/Card";
 import HomePage from "../HomePage/HomePage";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 let petUrl = `${getAPI()}pet/`;
 
@@ -16,7 +17,7 @@ class PetProfile extends Component {
     };
     console.log(props);
   }
-  
+
   componentDidMount() {
     if (!this.state.pets) {
       let url = `${petUrl}${this.props.match.params.id}`;
@@ -49,7 +50,7 @@ class PetProfile extends Component {
               <div>
                 <span>{this.state.petDetails.numberOfLikes} Likes</span>
               </div>
-              <div className="card__container-more">X</div>
+              <DeleteForeverIcon />
             </div>
           </div>
         </div>
