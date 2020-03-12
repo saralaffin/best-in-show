@@ -6,6 +6,8 @@ import Dropdown from "../Form/Dropdown/Dropdown";
 import Button from "../Button/Button";
 import getAPI from "../../util/util";
 import axios from "axios";
+import "../../App.css";
+import "./AddPet.css";
 
 class AddPet extends Component {
   constructor(props) {
@@ -131,8 +133,7 @@ class AddPet extends Component {
   }
   render() {
     return (
-      <div>
-        This page lets you add pets!
+      <div className="Form__container">
         <Form
           onSubmit={this.onSubmit}
           inputComponenets={this.inputComponenets}

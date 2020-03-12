@@ -69,7 +69,12 @@ class CatBreeds extends Component {
         </div>
       );
     } else {
-      return null;
+      return (
+        <div className="CatBreeds__container-loading">
+          Please pick a breed on the list to the right to see info about that
+          specific breed!
+        </div>
+      );
     }
   };
 
