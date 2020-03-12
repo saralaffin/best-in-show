@@ -16,9 +16,11 @@ class HomePage extends Component {
 
   //method to populate cards
   populateCards = () => {
-    return this.state.pets.map(petObject => (
-      <Card className="card" {...petObject} key={petObject._id} />
-    ));
+    return this.state.pets
+      .reverse()
+      .map(petObject => (
+        <Card className="card" {...petObject} key={petObject._id} />
+      ));
   };
   componentDidMount() {
     if (!this.state.pets) {

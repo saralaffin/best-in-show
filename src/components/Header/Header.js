@@ -13,7 +13,7 @@ function Header(props) {
       </div>
       <div className="header__links-container">
         <Link to="/addPet" className="header__links">
-          + Post
+          + Add Post
         </Link>
         <Link to="/dogs" className="header__links">
           Dog Breeds
