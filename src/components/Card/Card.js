@@ -27,7 +27,7 @@ class Card extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="card__background">
         <div className="card__feed">
           <div className="card__container">
             <div
