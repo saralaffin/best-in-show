@@ -1,7 +1,6 @@
 .card__feed {
   max-height: 100%;
   width: 620px;
-  overflow-y: scroll;
   display: grid;
   margin: 0 auto;
 }
@@ -27,8 +26,12 @@
   max-height: 760px;
   border-radius: 5px;
   border: 1px solid black;
+<<<<<<< HEAD
   overflow-y: scroll;
   margin-top: 20px;
+=======
+  margin-top: 50px;
+>>>>>>> d8634c1c714a86a50480ba293fd757ad0a68a7a9
 }
 
 .card__container-username {

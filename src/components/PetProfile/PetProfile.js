@@ -5,6 +5,7 @@ import getAPI from "../../util/util";
 import axios from "axios";
 import Card from "../Card/Card";
 import HomePage from "../HomePage/HomePage";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 let petUrl = `${getAPI()}pet/`;
 
@@ -12,11 +13,17 @@ class PetProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      petDetails: {}
+      petDetails: {},
+      deleted: false
     };
     console.log(props);
   }
-  
+  deleteClickHandle = () => {
+    axios.delete(`${petUrl}${this.props.match.params.id}`);
+    this.setState({
+      deleted: true
+    });
+  };
   componentDidMount() {
     if (!this.state.pets) {
       let url = `${petUrl}${this.props.match.params.id}`;
@@ -27,7 +34,7 @@ class PetProfile extends Component {
   }
 
   render() {
-    if (this.state.petDetails) {
+    if (this.state.petDetails && !this.state.deleted) {
       return (
         <div>
           <div className="card__container">
@@ -49,11 +56,15 @@ class PetProfile extends Component {
               <div>
                 <span>{this.state.petDetails.numberOfLikes} Likes</span>
               </div>
-              <div className="card__container-more">X</div>
+              <div onClick={this.deleteClickHandle}>
+                <DeleteForeverIcon />
+              </div>
             </div>
           </div>
         </div>
       );
+    } else {
+      return <div>Can't find this pet anymore :(</div>;
     }
   }
 }
