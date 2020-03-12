@@ -4,6 +4,7 @@ import "./Card.css";
 import Like from "../Like/Like";
 import Axios from "axios";
 import getAPI from "../../util/util";
+import { Link } from "react-router-dom";
 
 class Card extends Component {
   constructor(props) {
@@ -47,7 +48,9 @@ class Card extends Component {
                 </div>
                 <span>{this.state.numberOfLikes} Likes</span>
               </div>
+              <Link to={`/pet/${this.props._id}`} >
               <div className="card__container-more">See More Info</div>
+              </Link>
             </div>
           </div>
         </div>

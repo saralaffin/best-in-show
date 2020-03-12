@@ -7,6 +7,7 @@ import CatBreeds from "./components/CatBreeds/CatBreeds";
 import AddPet from "./components/AddPet/AddPet";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import PetProfile from "./components/PetProfile/PetProfile";
 
 class App extends Component {
   render() {
@@ -33,6 +34,11 @@ class App extends Component {
             path="/addPet"
             exact
             render={routerProps => <AddPet {...routerProps} />}
+          />
+            <Route
+            path="/pet/:id"
+            exact
+            render={routerProps => <PetProfile {...routerProps} />}
           />
         </main>
         {/* <Footer /> */}
