@@ -16,18 +16,17 @@ class HomePage extends Component {
 
   //method to populate cards
   populateCards = () => {
-    return this.state.pets
-      .reverse()
-      .map(petObject => (
-        <Card className="card" {...petObject} key={petObject._id} />
-      ));
+    console.log(this.state.pets);
+    return this.state.pets.map(petObject => (
+      <Card className="card" {...petObject} key={petObject._id} />
+    ));
   };
   componentDidMount() {
     if (!this.state.pets) {
       let url = `${getAPI()}pets/`;
 
       axios.get(url).then(res => {
-        this.setState({ pets: res.data });
+        this.setState({ pets: res.data.reverse() });
       });
     }
   }
