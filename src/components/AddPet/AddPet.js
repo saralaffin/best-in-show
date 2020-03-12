@@ -108,14 +108,17 @@ class AddPet extends Component {
   };
   buttonComponent = (<Button label="Submit" type="lprimshad" />);
   onSubmit = e => {
+    e.preventDefault();
     axios.post(`${getAPI()}pets`, {
       type: this.state.type,
       petName: this.state.petName,
       age: parseInt(this.state.age),
       breed: this.state.breed,
       image: this.state.image,
-      caption: this.state.caption
+      caption: this.state.caption,
+      submitted: false
     });
+    this.setState({ submitted: true });
   };
   componentDidMount() {
     if (!this.state.breeds) {
@@ -132,16 +135,25 @@ class AddPet extends Component {
     }
   }
   render() {
-    return (
-      <div className="Form__container">
-        <Form
-          onSubmit={this.onSubmit}
-          inputComponenets={this.inputComponenets}
-          dropdownComponents={this.dropdownComponents()}
-          buttonComponent={this.buttonComponent}
-        />
-      </div>
-    );
+    if (!this.state.submitted) {
+      return (
+        <div className="Form__container">
+          <Form
+            onSubmit={this.onSubmit}
+            inputComponenets={this.inputComponenets}
+            dropdownComponents={this.dropdownComponents()}
+            buttonComponent={this.buttonComponent}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          Thanks for sumitting your pet!
+          <Link to="/">Click here to go back to feed</Link>
+        </div>
+      );
+    }
   }
 }
 
