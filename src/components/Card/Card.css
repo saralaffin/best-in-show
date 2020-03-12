@@ -1,7 +1,6 @@
 .card__feed {
   max-height: 100%;
   width: 620px;
-  overflow-y: scroll;
   display: grid;
   margin: 0 auto;
 }
