@@ -4,7 +4,7 @@
   overflow-y: scroll;
   color: white;
   float: right;
-  box-shadow: -5px 5px #a80000;
+  box-shadow: -5px 5px #770f057c;
 }
 
 .CatBreeds__breed {
@@ -52,10 +52,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4vh;
+  font-size: 2vh;
   height: 300px;
-  width: 300px;
-  background-color: rgba(0, 0, 0, 0.194);
+  max-width: 300px;
+  background-color: #770f05bb;
   color: white;
   border-radius: 10px;
+  box-shadow: 3px 3px #770f05;
+  padding: 10px;
 }
