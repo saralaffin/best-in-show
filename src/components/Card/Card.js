@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../App.css";
 import "./Card.css";
+import { Link } from "react-router-dom";
 
 class Card extends Component {
   render() {
@@ -26,7 +27,9 @@ class Card extends Component {
                 ></img>
                 <span>{this.props.numberOfLikes} Likes</span>
               </div>
+              <Link to={`/pet/${this.props._id}`} >
               <div className="card__container-more">See More Info</div>
+              </Link>
             </div>
           </div>
         </div>
