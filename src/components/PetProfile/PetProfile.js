@@ -14,7 +14,7 @@ class PetProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // petDetails: this.props,
+      petDetails: null,
       deleted: false,
       numberOfLikes: 0,
       liked: false
@@ -40,7 +40,7 @@ class PetProfile extends Component {
     });
   };
   componentDidMount() {
-    if (!this.state.pets) {
+    if (!this.state.petDetails) {
       let url = `${petUrl}${this.props.match.params.id}`;
       axios.get(url).then(res => {
         this.setState({
@@ -77,7 +77,7 @@ class PetProfile extends Component {
                 <div className="pet__container-like">
                   <Like active={this.state.liked} onClick={this.clickHandle} />
                 </div>
-                <div>{this.state.petDetails.numberOfLikes} Likes</div>
+                <div>{this.state.numberOfLikes} Likes</div>
               </div>
               <div onClick={this.deleteClickHandle}>
                 <DeleteForeverIcon />
