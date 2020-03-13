@@ -50,7 +50,14 @@ class Card extends Component {
                 </div>
                 <div>{this.state.numberOfLikes} Likes</div>
               </div>
-              <Link to={`/pet/${this.props._id}`}>
+              <Link
+                to={{
+                  pathname: `/pet/${this.props._id}`,
+                  state: {
+                    petDetails: this.props
+                  }
+                }}
+              >
                 <Button label="See Post" type="lprimshad" />
               </Link>
             </div>
