@@ -74,7 +74,7 @@ class PetProfile extends Component {
                 <div className="pet__container-like">
                   <Like active={this.state.liked} onClick={this.clickHandle} />
                 </div>
-                <div>{this.state.numberOfLikes} Likes</div>
+                <div>{this.state.petDetails.numberOfLikes} Likes</div>
               </div>
               <div onClick={this.deleteClickHandle}>
                 <DeleteForeverIcon />

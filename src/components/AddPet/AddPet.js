@@ -148,9 +148,11 @@ class AddPet extends Component {
       );
     } else {
       return (
-        <div>
-          Thanks for sumitting your pet!
-          <Link to="/">Click here to go back to feed</Link>
+        <div className="AddPet__success-container">
+          <div className="AddPet__success">
+            Thanks for submitting your pet!
+            <Link to="/">Click here to see your post.</Link>
+          </div>
         </div>
       );
     }
