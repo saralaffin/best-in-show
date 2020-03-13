@@ -14,9 +14,9 @@ class PetProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      petDetails: {},
+      // petDetails: this.props,
       deleted: false,
-      numberOfLikes: this.props.numberOfLikes || 0,
+      numberOfLikes: 0,
       liked: false
     };
     console.log(props);
@@ -28,7 +28,7 @@ class PetProfile extends Component {
         liked: true,
         numberOfLikes: currentLikes
       });
-      axios.put(`${getAPI()}pet/${this.props._id}`, {
+      axios.put(`${getAPI()}pet/${this.state.petDetails._id}`, {
         numberOfLikes: currentLikes
       });
     }
@@ -43,7 +43,10 @@ class PetProfile extends Component {
     if (!this.state.pets) {
       let url = `${petUrl}${this.props.match.params.id}`;
       axios.get(url).then(res => {
-        this.setState({ petDetails: res.data });
+        this.setState({
+          petDetails: res.data,
+          numberOfLikes: res.data.numberOfLikes
+        });
       });
     }
   }
