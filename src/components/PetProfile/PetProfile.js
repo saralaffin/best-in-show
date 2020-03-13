@@ -1,6 +1,7 @@
 import React, { Link, Component } from "react";
 import PropTypes from "prop-types";
 import getAPI from "../../util/util";
+import Like from "../Like/Like";
 import "./PetProfile.css";
 import axios from "axios";
 import Card from "../Card/Card";
@@ -14,10 +15,24 @@ class PetProfile extends Component {
     super(props);
     this.state = {
       petDetails: {},
-      deleted: false
+      deleted: false,
+      numberOfLikes: this.props.numberOfLikes || 0,
+      liked: false
     };
     console.log(props);
   }
+  clickHandle = () => {
+    if (!this.state.liked) {
+      const currentLikes = this.state.petDetails.numberOfLikes + 1;
+      this.setState({
+        liked: true,
+        numberOfLikes: currentLikes
+      });
+      axios.put(`${getAPI()}pet/${this.props._id}`, {
+        numberOfLikes: currentLikes
+      });
+    }
+  };
   deleteClickHandle = () => {
     axios.delete(`${petUrl}${this.props.match.params.id}`);
     this.setState({
@@ -49,18 +64,17 @@ class PetProfile extends Component {
               {this.state.petDetails.caption}
             </div>
             <div className="pet__container-more-stats">
-              <p className="pet__container-breed">
-                <span>Breed: </span>
-                {this.state.petDetails.breed}
-              </p>
-              <p className="pet__container-age">
-                <span>Age: </span>
-                {this.state.petDetails.age}
-              </p>
+              <div className="pet__container-titles">Breed:</div>
+              <div>{this.state.petDetails.breed}</div>
+              <div className="pet__container-titles">Age: </div>
+              <div>{this.state.petDetails.age}</div>
             </div>
             <div className="pet__container-links">
-              <div>
-                <span>{this.state.petDetails.numberOfLikes} Likes</span>
+              <div className="pet-likes">
+                <div className="pet__container-like">
+                  <Like active={this.state.liked} onClick={this.clickHandle} />
+                </div>
+                <div>{this.state.petDetails.numberOfLikes} Likes</div>
               </div>
               <div onClick={this.deleteClickHandle}>
                 <DeleteForeverIcon />
