@@ -16,9 +16,9 @@
 
 .pet__container {
   max-width: 600px;
-  max-height: 800px;
+  max-height: 900px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #770f05;
   margin: auto;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .pet__container-more {
-  background-color: black;
+  background-color: #770f05;
   color: white;
   font-size: 2vh;
   padding: 5px;
@@ -64,12 +64,62 @@
 }
 
 .pet__container-more-stats {
-  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  margin: 0 auto;
+  color: white;
+  margin-top: 5px;
+  background-color: #770f05;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #770f055b;
 }
-.pet__container-more-stats span {
-  font-weight: 900;
+
+.pet__container-titles {
+  font-weight: 800;
+  text-decoration: underline;
+  font-size: 2vh;
 }
-.pet__container-breed {
+
+@media only screen and (max-width: 414px) {
+  .pet__container {
+    margin-top: 10px;
+    max-height: 100%;
+    width: 400px;
+  }
+  .pet__container-image {
+    width: 400px;
+    height: 400px;
+  }
 }
-.pet__container-age {
+@media only screen and (max-width: 375px) {
+  .pet__container {
+    width: 360px;
+  }
+  .pet__container-image {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .pet__container {
+    max-height: 100%;
+    width: 340px;
+  }
+  .pet__container-image {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  .pet__container {
+    width: 310px;
+  }
+  .pet__container-image {
+    width: 310px;
+    height: 310px;
+  }
 }
