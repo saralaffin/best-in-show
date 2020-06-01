@@ -1,4 +1,6 @@
-To see our site, [click here](https://pawsitivity.netlify.com/).
+[Check out our deployed site](https://pawsitivity.netlify.com/).
+
+[Check out our backend repo](https://github.com/zfriendly/pets-backend).
 
 Thanks for visiting the front end repository of "Best in Show" "Petstagram", an api created by Sarah Saleh, Sara Laffin, Zach Friendly and Norman Calhoun as a project for our software imersion program at General Assembly Washington DC. This project utilizes Html, CSS, React, Javascript, MongoDB, Mongoose, Express, VS code, Jest automated testing, Storybook, Material UI, Github and Github workflow. In addition to data we have compiled either fictionally, and/or drawn from actual pets and owners, we have drawn data sets from https://www.kaggle.com/hocop1/cat-and-dog-breeds-parameters, for user reference enrichment. We deployed this project with full C.R.U.D., allowing it to take in user data on an ongoing basis.
 
